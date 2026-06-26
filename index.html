@@ -67,6 +67,17 @@
     .tile-tag { font-size: 11px; color: #6B6B7B; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
     .tile-desc { font-size: 13px; color: #9A958F; line-height: 1.5; margin-top: 5px; }
 
+    /* Produkt: logo (chip) + tekst */
+    a.tile.prod { display: flex; align-items: center; gap: 14px; }
+    .tile-ico {
+      flex: 0 0 52px; width: 52px; height: 52px;
+      background: #F4F1EC; border-radius: 11px; padding: 7px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tile-ico img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .tile-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+    a.tile.prod .tile-desc { display: block; }
+
     /* CV: dwie kolumny na szerszych ekranach */
     .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     @media (max-width: 480px) { .cv-grid { grid-template-columns: 1fr; } .logo-main { height: 76px; } h1 { font-size: 23px; } }
@@ -105,21 +116,33 @@
     <div class="section">
       <div class="section-hd">Products I built</div>
       <div class="grid">
-        <a class="tile" href="https://riskfuria.com/d3mo" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">Furia</span><span class="tile-tag">demo</span></div>
-          <div class="tile-desc">Credit decision engine with a visual policy editor and reporting.</div>
+        <a class="tile prod" href="https://riskfuria.com/d3mo" target="_blank" rel="noopener">
+          <span class="tile-ico"><img src="icons/furia.png" alt=""></span>
+          <span class="tile-body">
+            <span class="tile-top"><span class="tile-name">Furia</span><span class="tile-tag">demo</span></span>
+            <span class="tile-desc">Credit decision engine with a visual policy editor and reporting.</span>
+          </span>
         </a>
-        <a class="tile" href="https://facesaces.com/d3mo" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">FacesAces</span><span class="tile-tag">demo</span></div>
-          <div class="tile-desc">Production eKYC: OCR, face matching and identity deduplication.</div>
+        <a class="tile prod" href="https://facesaces.com/d3mo" target="_blank" rel="noopener">
+          <span class="tile-ico"><img src="icons/facesaces.png" alt=""></span>
+          <span class="tile-body">
+            <span class="tile-top"><span class="tile-name">FacesAces</span><span class="tile-tag">demo</span></span>
+            <span class="tile-desc">Production eKYC: OCR, face matching and identity deduplication.</span>
+          </span>
         </a>
-        <a class="tile" href="https://bieyecyclops.com/d3mo" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">BiEyeCyclops</span><span class="tile-tag">demo</span></div>
-          <div class="tile-desc">Whole Management System, end to end management of a lending institution.</div>
+        <a class="tile prod" href="https://bieyecyclops.com/d3mo" target="_blank" rel="noopener">
+          <span class="tile-ico"><img src="icons/bieyecyclops.png" alt=""></span>
+          <span class="tile-body">
+            <span class="tile-top"><span class="tile-name">BiEyeCyclops</span><span class="tile-tag">demo</span></span>
+            <span class="tile-desc">Whole Management System, end to end management of a lending institution.</span>
+          </span>
         </a>
-        <a class="tile" href="https://arbedo.pl/d3mo" target="_blank" rel="noopener">
-          <div class="tile-top"><span class="tile-name">arbedo</span><span class="tile-tag">demo</span></div>
-          <div class="tile-desc">Time and attendance system for the NL, DE and PL markets.</div>
+        <a class="tile prod" href="https://arbedo.pl/d3mo" target="_blank" rel="noopener">
+          <span class="tile-ico"><img src="icons/arbedo.png" alt=""></span>
+          <span class="tile-body">
+            <span class="tile-top"><span class="tile-name">arbedo</span><span class="tile-tag">demo</span></span>
+            <span class="tile-desc">Time and attendance system for the NL, DE and PL markets.</span>
+          </span>
         </a>
       </div>
     </div>
