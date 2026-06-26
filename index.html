@@ -1,45 +1,130 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mateusz Ciechański, CV</title>
-  <meta name="description" content="CV Mateusza Ciechańskiego: dyrektor operacyjny i ryzyka, fintech i bankowość.">
+  <title>Mateusz Ciechański</title>
+  <meta name="description" content="Mateusz Ciechański, operations and risk director in fintech and banking. CV and product demos.">
+  <link rel="icon" href="logo-bi-eye.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#082480; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#f7f8fa; }
-    .wrap { max-width:680px; margin:0 auto; padding:48px 20px 64px; }
-    h1 { font-size:28px; margin:0 0 4px; }
-    .sub { color:var(--muted); margin:0 0 28px; font-size:15px; }
-    .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin:14px 0; }
-    .card h2 { font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
-    a.btn { display:flex; align-items:center; justify-content:space-between; text-decoration:none; color:var(--ink);
-      border:1px solid var(--line); border-radius:10px; padding:13px 16px; margin:8px 0; font-weight:600; transition:.15s; }
-    a.btn:hover { border-color:var(--accent); color:var(--accent); }
-    a.btn small { font-weight:400; color:var(--muted); }
-    .foot { color:var(--muted); font-size:13px; margin-top:28px; }
-    .foot a { color:var(--accent); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold: rgba(200,150,62,1); --ember: rgba(212,69,26,1); }
+    body {
+      min-height: 100vh;
+      background: #0D0D14;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,32,32,0.10) 0%, transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(212,69,26,0.05) 0%, transparent 45%);
+      color: #E0DCD8;
+      font-family: 'DM Sans', sans-serif;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 56px 20px 64px;
+    }
+    .wrap { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+    /* Cyclops hero (tak jak na cyclopseyeStats) */
+    .logo-wrap {
+      padding: 18px 24px; margin-bottom: 10px;
+      background: radial-gradient(ellipse at center, rgba(200,150,62,0.07) 0%, transparent 70%);
+      border-radius: 18px;
+    }
+    .logo-main {
+      height: 96px; max-width: 100%;
+      filter: brightness(1.1) drop-shadow(0 0 30px rgba(200,150,62,0.22));
+      mix-blend-mode: screen;
+    }
+    h1 { font-size: 26px; font-weight: 700; letter-spacing: .2px; margin-top: 6px; }
+    .subtitle {
+      font-size: 12px; color: #6B6B7B; letter-spacing: 3px;
+      text-transform: uppercase; margin-top: 8px;
+    }
+    .bio { font-size: 15px; line-height: 1.65; color: #B9B4AE; margin: 22px auto 4px; max-width: 560px; }
+
+    .section { width: 100%; margin-top: 36px; }
+    .section-hd {
+      font-size: 12px; font-weight: 700; color: #8B8B9B;
+      text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;
+    }
+
+    /* Karty/linki w palecie cyklopa */
+    .grid { display: flex; flex-direction: column; gap: 10px; }
+    a.tile {
+      display: block; text-decoration: none; text-align: left;
+      background: #1A1A26; border: 1px solid #2A2A3A; border-radius: 12px;
+      padding: 15px 18px; color: #E0DCD8;
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+    a.tile:hover {
+      border-color: rgba(200,150,62,0.55);
+      box-shadow: 0 0 0 1px rgba(200,150,62,0.15), 0 8px 30px rgba(139,32,32,0.18);
+      transform: translateY(-1px);
+    }
+    .tile-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+    .tile-name { font-weight: 600; font-size: 15px; }
+    .tile-tag { font-size: 11px; color: #6B6B7B; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+    .tile-desc { font-size: 13px; color: #9A958F; line-height: 1.5; margin-top: 5px; }
+
+    /* CV: dwie kolumny na szerszych ekranach */
+    .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 480px) { .cv-grid { grid-template-columns: 1fr; } .logo-main { height: 76px; } h1 { font-size: 23px; } }
+    a.cv { text-align: center; padding: 16px 14px; }
+    a.cv .tile-name { display: block; font-size: 15px; }
+    a.cv .tile-tag { display: block; margin-top: 4px; }
+
+    .foot { margin-top: 40px; font-size: 12px; color: #4A4A5A; }
+    .foot a { color: var(--gold); text-decoration: none; }
+    .foot a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="logo-wrap"><img class="logo-main" src="logo-bi-eye.png" alt="Cyclops"></div>
     <h1>Mateusz Ciechański</h1>
-    <p class="sub">Dyrektor operacyjny i ryzyka, fintech i bankowość. Uruchamianie instytucji kredytowych, automatyzacja decyzji, własne systemy.</p>
+    <div class="subtitle">Operations &amp; Risk Director</div>
 
-    <div class="card">
-      <h2>CV do pobrania</h2>
-      <a class="btn" href="Mateusz-Ciechanski-CV-PL.pdf">CV po polsku <small>PDF</small></a>
-      <a class="btn" href="Mateusz-Ciechanski-CV-EN.pdf">CV in English <small>PDF</small></a>
+    <p class="bio">
+      Operations and risk director with over 10 years in fintech and banking, combining management with
+      hands-on engineering. I launch credit institutions on new markets, build risk policies and automate
+      lending decisions end to end. I design and build my own systems, a decision engine, eKYC, reporting
+      and BI, a loan management system and CRM, and deploy them in 30 to 40 days.
+    </p>
+
+    <div class="section">
+      <div class="section-hd">Curriculum Vitae</div>
+      <div class="cv-grid">
+        <a class="tile cv" href="Mateusz-Ciechanski-CV-EN.pdf"><span class="tile-name">CV, English</span><span class="tile-tag">PDF</span></a>
+        <a class="tile cv" href="Mateusz-Ciechanski-CV-PL.pdf"><span class="tile-name">CV, Polski</span><span class="tile-tag">PDF</span></a>
+        <a class="tile cv" href="Mateusz-Ciechanski-CV-ATS-EN.pdf"><span class="tile-name">CV ATS, English</span><span class="tile-tag">PDF, plain</span></a>
+        <a class="tile cv" href="Mateusz-Ciechanski-CV-ATS-PL.pdf"><span class="tile-name">CV ATS, Polski</span><span class="tile-tag">PDF, plain</span></a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Wersja prosta (ATS)</h2>
-      <a class="btn" href="Mateusz-Ciechanski-CV-ATS-PL.pdf">CV ATS po polsku <small>PDF</small></a>
-      <a class="btn" href="Mateusz-Ciechanski-CV-ATS-EN.pdf">CV ATS in English <small>PDF</small></a>
+    <div class="section">
+      <div class="section-hd">Products I built</div>
+      <div class="grid">
+        <a class="tile" href="https://riskfuria.com/d3mo" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-name">Furia</span><span class="tile-tag">demo</span></div>
+          <div class="tile-desc">Credit decision engine with a visual policy editor and reporting.</div>
+        </a>
+        <a class="tile" href="https://facesaces.com/d3mo" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-name">FacesAces</span><span class="tile-tag">demo</span></div>
+          <div class="tile-desc">Production eKYC: OCR, face matching and identity deduplication.</div>
+        </a>
+        <a class="tile" href="https://bieyecyclops.com/d3mo" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-name">BiEyeCyclops</span><span class="tile-tag">demo</span></div>
+          <div class="tile-desc">Whole Management System, end to end management of a lending institution.</div>
+        </a>
+        <a class="tile" href="https://arbedo.pl/d3mo" target="_blank" rel="noopener">
+          <div class="tile-top"><span class="tile-name">arbedo</span><span class="tile-tag">demo</span></div>
+          <div class="tile-desc">Time and attendance system for the NL, DE and PL markets.</div>
+        </a>
+      </div>
     </div>
 
-    <p class="foot">Kontakt: <a href="mailto:matciechanski@gmail.com">matciechanski@gmail.com</a></p>
+    <div class="foot"><a href="mailto:matciechanski@gmail.com">matciechanski@gmail.com</a></div>
   </div>
 </body>
 </html>
