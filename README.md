@@ -1,6 +1,6 @@
 # CV, Mateusz Ciechański
 
-Publiczne CV (PDF) do dzielenia linkiem. Strona: https://ciechanpl.github.io/cv/
+Publiczne CV (PDF) do dzielenia linkiem. Strona: https://cv.bieyecyclops.com/
 
 - `Mateusz-Ciechanski-CV-PL.pdf`, `...-EN.pdf` (wersja graficzna)
 - `Mateusz-Ciechanski-CV-ATS-PL.pdf`, `...-EN.pdf` (wersja prosta pod ATS)
